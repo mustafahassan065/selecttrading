@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select Trading | V2 Elite Mentorship Program</title>
-    <meta name="description" content="Stop renting trading signals. Master institutional price action with our rigorous V2 Mentorship program. Available in English and French.">
+    <meta name="description" content="Stop renting trading signals. Master institutional price action with our rigorous 12-Week V2 Mentorship program. Available in English and French.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -12,7 +12,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -25,32 +25,32 @@
                     colors: {
                         select: {
                             black: '#000000',
-                            dark: '#0A0A0A',
-                            panel: '#111111',
-                            border: '#222222',
+                            dark: '#080808',
+                            panel: '#121212',
+                            border: '#262626',
+                            borderHl: '#404040',
                             silver: '#E5E7EB',
                             chrome: '#9CA3AF',
                             accent: '#FFFFFF'
                         }
                     },
                     animation: {
-                        'slow-pan': 'panImage 40s linear infinite',
                         'fade-in': 'fadeIn 1.5s ease-out forwards',
-                        'pulse-silver': 'pulseSilver 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'marquee': 'marquee 40s linear infinite',
+                        'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
-                        panImage: {
-                            '0%': { backgroundPosition: '0% 50%' },
-                            '50%': { backgroundPosition: '100% 50%' },
-                            '100%': { backgroundPosition: '0% 50%' },
-                        },
                         fadeIn: {
-                            '0%': { opacity: 0, transform: 'translateY(10px)' },
+                            '0%': { opacity: 0, transform: 'translateY(15px)' },
                             '100%': { opacity: 1, transform: 'translateY(0)' },
                         },
-                        pulseSilver: {
-                            '0%, 100%': { opacity: 0.05 },
-                            '50%': { opacity: 0.15 },
+                        marquee: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.05, transform: 'scale(1)' },
+                            '50%': { opacity: 0.15, transform: 'scale(1.05)' },
                         }
                     }
                 }
@@ -61,9 +61,8 @@
     <style>
         body { background-color: #000000; color: #FFFFFF; overflow-x: hidden; }
         
-        /* High-End Chrome/Silver Gradients */
+        /* High-End Chrome Gradients & Text */
         .text-gradient-chrome { background: linear-gradient(180deg, #FFFFFF 0%, #9CA3AF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-gradient-chrome { background: linear-gradient(135deg, #222222 0%, #111111 100%); }
         
         /* Luxury Button Styling */
         .btn-luxury { 
@@ -71,7 +70,7 @@
             background: #FFFFFF; 
             color: #000000; 
             overflow: hidden; 
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
             box-shadow: 0 0 0 0 rgba(255,255,255,0);
         }
         .btn-luxury::before { 
@@ -80,54 +79,56 @@
             top: 0; left: -100%; 
             width: 100%; height: 100%; 
             background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent); 
-            transition: all 0.6s ease; 
+            transition: all 0.7s ease; 
         }
         .btn-luxury:hover::before { left: 100%; }
         .btn-luxury:hover { 
-            box-shadow: 0 10px 30px -10px rgba(255,255,255,0.4); 
-            transform: translateY(-2px); 
+            box-shadow: 0 15px 40px -10px rgba(255,255,255,0.4); 
+            transform: translateY(-3px); 
         }
 
-        /* Outline Button */
         .btn-outline {
             border: 1px solid rgba(255,255,255,0.2);
             color: #FFFFFF;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
         .btn-outline:hover {
             border-color: #FFFFFF;
             background: rgba(255,255,255,0.05);
+            box-shadow: 0 10px 30px -10px rgba(255,255,255,0.1);
         }
 
-        /* Topographic / Marble Noise Background */
+        /* Cinematic Noise Background */
         .bg-noise {
             position: absolute;
             inset: 0;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 1;
         }
 
         /* Elegant Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #000000; }
-        ::-webkit-scrollbar-thumb { background: #333333; border-radius: 0px; }
+        ::-webkit-scrollbar-thumb { background: #333333; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #666666; }
 
-        /* Accordion transition */
-        .accordion-content { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; }
+        .accordion-content { transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out; }
     </style>
 </head>
 <body class="antialiased selection:bg-white selection:text-black">
 
-    <div class="bg-select-panel border-b border-select-border text-select-chrome font-sans text-xs uppercase tracking-[0.2em] py-3 text-center relative z-50">
-        V2 Mentorship Intakes Are <span class="text-white font-bold">Open</span>. Limited to 20 students per cohort to ensure 1-on-1 quality.
+    <div class="bg-select-panel border-b border-select-border text-select-chrome font-sans text-xs uppercase tracking-[0.25em] py-3 text-center relative z-50">
+        <span class="inline-block animate-pulse w-2 h-2 bg-white rounded-full mr-3"></span>
+        V2 Mentorship Intakes Are <span class="text-white font-bold">Open</span>. Limited to 20 students per cohort.
     </div>
 
     <nav x-data="{ scrolled: false, mobileMenu: false }" 
          @scroll.window="scrolled = (window.pageYOffset > 20)" 
-         :class="{'bg-black/90 backdrop-blur-xl border-b border-select-border': scrolled, 'bg-transparent border-transparent': !scrolled}"
+         :class="{'bg-black/95 backdrop-blur-2xl border-b border-select-border shadow-2xl': scrolled, 'bg-transparent border-transparent': !scrolled}"
          class="fixed w-full z-40 transition-all duration-500 top-[42px]">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
@@ -141,14 +142,15 @@
                     </span>
                 </div>
                 
-                <div class="hidden lg:flex items-center space-x-12">
-                    <a href="#philosophy" class="font-sans text-xs font-semibold text-select-chrome hover:text-white transition-colors uppercase tracking-widest">Philosophy</a>
-                    <a href="#curriculum" class="font-sans text-xs font-semibold text-select-chrome hover:text-white transition-colors uppercase tracking-widest">V2 Curriculum</a>
-                    <a href="#results" class="font-sans text-xs font-semibold text-select-chrome hover:text-white transition-colors uppercase tracking-widest">Alumni Results</a>
+                <div class="hidden lg:flex items-center space-x-10">
+                    <a href="#manifesto" class="font-sans text-xs font-semibold text-select-chrome hover:text-white transition-colors uppercase tracking-[0.15em]">Manifesto</a>
+                    <a href="#curriculum" class="font-sans text-xs font-semibold text-select-chrome hover:text-white transition-colors uppercase tracking-[0.15em]">12-Week Syllabus</a>
+                    <a href="#mentor" class="font-sans text-xs font-semibold text-select-chrome hover:text-white transition-colors uppercase tracking-[0.15em]">The Mentor</a>
+                    <a href="#results" class="font-sans text-xs font-semibold text-select-chrome hover:text-white transition-colors uppercase tracking-[0.15em]">Alumni</a>
                     
                     <div class="pl-8 border-l border-select-border">
-                        <a href="#enrollment" class="btn-luxury font-sans text-xs font-bold uppercase tracking-widest px-8 py-3 rounded-sm">
-                            Enroll Now ($2,499)
+                        <a href="#enrollment" class="btn-luxury font-sans text-xs font-bold uppercase tracking-widest px-8 py-3.5 rounded-sm shadow-2xl">
+                            Apply Now ($2,499)
                         </a>
                     </div>
                 </div>
@@ -164,105 +166,158 @@
             </div>
         </div>
 
-        <div x-show="mobileMenu" x-collapse class="lg:hidden bg-select-black border-t border-select-border absolute w-full h-screen">
-            <div class="px-6 pt-10 pb-8 space-y-6">
-                <a href="#philosophy" @click="mobileMenu = false" class="block font-serif text-xl tracking-widest text-select-chrome hover:text-white border-b border-select-border pb-4">Philosophy</a>
-                <a href="#curriculum" @click="mobileMenu = false" class="block font-serif text-xl tracking-widest text-select-chrome hover:text-white border-b border-select-border pb-4">Curriculum</a>
-                <a href="#results" @click="mobileMenu = false" class="block font-serif text-xl tracking-widest text-select-chrome hover:text-white border-b border-select-border pb-4">Results</a>
+        <div x-show="mobileMenu" x-collapse class="lg:hidden bg-select-black border-t border-select-border absolute w-full h-screen overflow-y-auto">
+            <div class="px-6 pt-10 pb-32 space-y-6">
+                <a href="#manifesto" @click="mobileMenu = false" class="block font-serif text-xl tracking-widest text-select-chrome hover:text-white border-b border-select-border pb-4">Manifesto</a>
+                <a href="#curriculum" @click="mobileMenu = false" class="block font-serif text-xl tracking-widest text-select-chrome hover:text-white border-b border-select-border pb-4">12-Week Syllabus</a>
+                <a href="#mentor" @click="mobileMenu = false" class="block font-serif text-xl tracking-widest text-select-chrome hover:text-white border-b border-select-border pb-4">The Mentor</a>
+                <a href="#results" @click="mobileMenu = false" class="block font-serif text-xl tracking-widest text-select-chrome hover:text-white border-b border-select-border pb-4">Alumni Results</a>
                 <a href="#enrollment" @click="mobileMenu = false" class="block mt-10 text-center btn-luxury font-sans font-bold text-sm uppercase tracking-widest py-4 rounded-sm">
-                    Secure Enrollment
+                    Secure V2 Enrollment
                 </a>
             </div>
         </div>
     </nav>
 
-    <section class="relative pt-48 pb-32 lg:pt-56 lg:pb-40 overflow-hidden bg-select-black">
+    <div class="absolute top-[138px] left-0 w-full overflow-hidden bg-select-panel border-b border-select-border py-2.5 z-30 hidden md:block">
+        <div class="flex whitespace-nowrap animate-marquee items-center text-select-chrome font-sans text-[10px] tracking-[0.35em] uppercase font-bold">
+            <span class="mx-10">✦ V2 COHORT 92% FILL CAPACITY</span>
+            <span class="mx-10">✦ $4.2M IN FUNDED ACCOUNTS ACQUIRED BY ALUMNI</span>
+            <span class="mx-10">✦ ENGLISH AND FRENCH MENTORSHIP TRACKS OPEN</span>
+            <span class="mx-10">✦ INSTITUTIONAL ORDER FLOW FOCUS</span>
+            <span class="mx-10">✦ ZERO RETAIL INDICATORS</span>
+            <span class="mx-10">✦ V2 COHORT 92% FILL CAPACITY</span>
+            <span class="mx-10">✦ $4.2M IN FUNDED ACCOUNTS ACQUIRED BY ALUMNI</span>
+            <span class="mx-10">✦ ENGLISH AND FRENCH MENTORSHIP TRACKS OPEN</span>
+            <span class="mx-10">✦ INSTITUTIONAL ORDER FLOW FOCUS</span>
+            <span class="mx-10">✦ ZERO RETAIL INDICATORS</span>
+        </div>
+    </div>
+
+    <section class="relative pt-56 pb-32 lg:pt-72 lg:pb-40 overflow-hidden bg-select-black">
         <div class="bg-noise"></div>
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[600px] bg-white/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
         
-        <div class="relative z-10 max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[1000px] h-[800px] bg-white/5 rounded-full blur-[150px] pointer-events-none z-0 animate-pulse-glow"></div>
+        <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+        <div class="absolute top-1/4 left-0 w-[400px] h-[600px] bg-select-chrome/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
+        
+        <div class="relative z-10 max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fade-in">
             
-            <p class="font-sans text-xs font-bold text-select-chrome tracking-[0.3em] uppercase mb-6">The End of Retail Trading</p>
+            <div class="inline-flex items-center gap-3 border border-select-border bg-select-panel/50 backdrop-blur-md px-6 py-2 rounded-sm mb-10">
+                <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
+                <p class="font-sans text-[10px] font-bold text-select-chrome tracking-[0.4em] uppercase">The End of Retail Trading</p>
+            </div>
             
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-[1.1] tracking-tight text-white max-w-5xl mx-auto">
+            <h1 class="text-5xl md:text-7xl lg:text-[7rem] font-serif mb-10 leading-[1.05] tracking-tight text-white max-w-6xl mx-auto">
                 Stop Renting Signals. <br>
-                <span class="text-gradient-chrome italic">Own The Skill.</span>
+                <span class="text-gradient-chrome italic pr-2">Own The Skill.</span>
             </h1>
             
-            <p class="mt-6 text-lg md:text-xl text-select-chrome font-light leading-relaxed max-w-3xl mx-auto">
-                A rigorous, 12-week comprehensive mentorship designed to deconstruct your retail habits and rebuild you as an independent, institutional-grade trader.
+            <p class="mt-8 text-lg md:text-xl text-select-chrome font-light leading-relaxed max-w-3xl mx-auto">
+                A rigorous, 12-week comprehensive mentorship designed to deconstruct your retail habits and rebuild you as an independent, institutional-grade proprietary trader.
             </p>
             
-            <div class="mt-16 max-w-4xl mx-auto relative group cursor-pointer" x-data="{ playing: false }">
-                <div class="absolute -inset-1 bg-gradient-to-r from-white/10 via-white/5 to-white/10 rounded-2xl blur opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-                <div class="relative rounded-xl overflow-hidden border border-select-border bg-select-panel aspect-video shadow-2xl">
+            <div class="mt-24 max-w-5xl mx-auto relative group cursor-pointer">
+                <div class="absolute -inset-2 bg-gradient-to-r from-white/10 via-white/5 to-white/10 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                
+                <div class="relative rounded-lg overflow-hidden border-2 border-select-border bg-select-panel aspect-video shadow-[0_40px_80px_rgba(0,0,0,0.9)] z-10">
                     
-                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1200" alt="Trading Masterclass" class="w-full h-full object-cover opacity-40 grayscale group-hover:scale-105 transition-transform duration-1000">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1600" alt="Select Trading Masterclass" class="w-full h-full object-cover opacity-30 grayscale mix-blend-overlay group-hover:scale-105 transition-transform duration-1000">
                     
+                    <div class="absolute inset-0 pointer-events-none opacity-20">
+                        <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
+                            <line x1="0" y1="20" x2="100" y2="20" stroke="#FFFFFF" stroke-width="0.1" stroke-dasharray="1 2"/>
+                            <line x1="0" y1="40" x2="100" y2="40" stroke="#FFFFFF" stroke-width="0.1" stroke-dasharray="1 2"/>
+                            <line x1="0" y1="60" x2="100" y2="60" stroke="#FFFFFF" stroke-width="0.1" stroke-dasharray="1 2"/>
+                            <line x1="0" y1="80" x2="100" y2="80" stroke="#FFFFFF" stroke-width="0.1" stroke-dasharray="1 2"/>
+                            <path d="M0,80 L15,75 L25,55 L40,65 L55,25 L75,35 L100,10" fill="none" stroke="#FFFFFF" stroke-width="0.5"/>
+                            <path d="M0,90 L15,85 L25,65 L40,75 L55,35 L75,45 L100,20" fill="none" stroke="#FFFFFF" stroke-width="0.2" opacity="0.5"/>
+                            <circle cx="55" cy="25" r="1.5" fill="#FFFFFF"/>
+                            <circle cx="100" cy="10" r="1.5" fill="#FFFFFF"/>
+                        </svg>
+                    </div>
+
                     <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-white/20 transition-all duration-300">
-                            <svg class="w-8 h-8 md:w-10 md:h-10 text-white ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-black/40 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-white/20 group-hover:scale-110 transition-all duration-500 shadow-2xl">
+                            <svg class="w-10 h-10 md:w-12 md:h-12 text-white ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                         </div>
                     </div>
 
-                    <div class="absolute bottom-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent flex items-center gap-4">
-                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        <div class="flex-1 h-1 bg-white/20 rounded-full overflow-hidden">
-                            <div class="w-1/3 h-full bg-white"></div>
+                    <div class="absolute bottom-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent flex items-center gap-6">
+                        <svg class="w-6 h-6 text-white cursor-pointer hover:text-select-chrome transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                        <div class="flex-1 h-1.5 bg-select-border rounded-full overflow-hidden cursor-pointer group-hover:h-2 transition-all relative">
+                            <div class="absolute top-0 left-0 w-1/3 h-full bg-white relative">
+                                <div class="absolute right-0 top-1/2 transform -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-[0_0_10px_#fff] scale-0 group-hover:scale-100 transition-transform"></div>
+                            </div>
                         </div>
-                        <span class="font-sans text-xs font-mono text-white">12:45 / 45:00</span>
-                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        <span class="font-sans text-[10px] font-mono text-white tracking-widest hidden sm:block">12:45 / 45:00</span>
+                        <div class="flex items-center gap-4">
+                            <svg class="w-5 h-5 text-white cursor-pointer hover:text-select-chrome transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <svg class="w-5 h-5 text-white cursor-pointer hover:text-select-chrome transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                        </div>
                     </div>
                 </div>
-                <p class="mt-4 font-sans text-xs text-select-chrome uppercase tracking-widest">Press play to watch the curriculum breakdown.</p>
+                <p class="mt-6 font-sans text-[10px] text-select-chrome uppercase tracking-[0.4em] font-bold">Press play to watch the comprehensive curriculum breakdown.</p>
             </div>
 
-            <div class="mt-16 flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#enrollment" class="btn-luxury font-sans text-sm font-bold uppercase tracking-widest px-12 py-5 rounded-sm">
+            <div class="mt-20 flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#enrollment" class="btn-luxury font-sans text-sm font-bold uppercase tracking-widest px-14 py-6 rounded-sm shadow-2xl">
                     Review Enrollment Options
                 </a>
-                <a href="#curriculum" class="btn-outline font-sans text-sm font-bold uppercase tracking-widest px-12 py-5 rounded-sm">
-                    Explore Syllabus
+                <a href="#curriculum" class="btn-outline font-sans text-sm font-bold uppercase tracking-widest px-14 py-6 rounded-sm">
+                    Explore The Syllabus
                 </a>
             </div>
             
         </div>
     </section>
 
-    <section id="philosophy" class="py-32 bg-select-panel border-t border-b border-select-border relative">
-        <div class="max-w-[70rem] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-12 gap-16">
+    <section id="manifesto" class="py-32 bg-select-panel border-t border-b border-select-border relative">
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-select-border top-0 hidden lg:block"></div>
+        
+        <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-24 relative z-10 bg-select-panel inline-block px-10 left-1/2 transform -translate-x-1/2">
+                <h2 class="font-sans text-xs font-bold text-select-chrome tracking-[0.3em] uppercase mb-4">The Manifesto</h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-white">The Retail Liquidity Trap.</h3>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-20 items-start">
                 
-                <div class="lg:col-span-5">
-                    <h2 class="font-sans text-xs font-bold text-select-chrome tracking-[0.2em] uppercase mb-4 border-l-2 border-white pl-4">The Paradigm Shift</h2>
-                    <h3 class="text-4xl md:text-5xl font-serif text-white mb-8 leading-tight">Trading is not a <br>get-rich-quick scheme.</h3>
-                    <p class="text-lg text-select-chrome font-light mb-8">It is a highly competitive, zero-sum profession where you are competing against the sharpest minds and fastest algorithms on Wall Street.</p>
+                <div class="space-y-12 pr-0 lg:pr-10">
+                    <h4 class="font-serif text-3xl text-white leading-tight">Trading is not a <br>get-rich-quick scheme.</h4>
                     
-                    <div class="p-6 border border-select-border bg-select-dark rounded-sm">
-                        <svg class="w-8 h-8 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        <p class="font-sans text-sm text-gray-400 italic">"If you are paying $30 a month for a Discord group to tell you when to buy and sell, you are not a trader. You are a follower. And when that group shuts down, your income drops to zero."</p>
+                    <div class="space-y-6 font-sans text-base text-gray-400 font-light leading-relaxed">
+                        <p>It is a highly competitive, zero-sum profession where you are competing against the sharpest minds, limitless capital, and fastest algorithms on Wall Street.</p>
+                        <p>The retail trading industry profits heavily off your ignorance. They sell you brightly colored indicators, magical diagonal trendlines, and signal alerts that rely on lagging historical data. This ecosystem is designed to keep you dependent, jumping from strategy to strategy month after month.</p>
+                        <p>More importantly, the patterns taught by retail educators (double tops, flags, support/resistance) are exactly what institutional algorithms use as <strong class="text-white font-medium">liquidity pools</strong> to fill their massive orders. If you trade retail patterns, you are the exit liquidity.</p>
+                    </div>
+                    
+                    <div class="p-8 border border-select-border bg-select-dark rounded-sm shadow-xl relative">
+                        <svg class="absolute top-4 right-4 w-12 h-12 text-select-border opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        <p class="font-sans text-sm text-gray-300 italic leading-relaxed relative z-10">"If you are paying $30 a month for a Discord group to tell you exactly when to buy and sell, you are not a trader. You are a follower. And when that group inevitably shuts down, your income drops to zero."</p>
                     </div>
                 </div>
                 
-                <div class="lg:col-span-7 space-y-8 font-sans text-base text-gray-300 font-light leading-relaxed">
-                    <p>
-                        The retail trading industry profits off your ignorance. They sell you colored indicators, magical trendlines, and signal alerts that rely on lagging data. This keeps you dependent on them month after month.
-                    </p>
-                    <p>
-                        <strong class="text-white font-medium">Select Trading V2 Mentorship was built to break that cycle.</strong>
-                    </p>
-                    <p>
-                        We do not sell signals. We do not sell indicators. We provide a rigorous, university-level education on market mechanics, institutional order flow, and psychological endurance. Our objective is singular: to make you self-sufficient so you never need to pay for another trading product again.
-                    </p>
+                <div class="space-y-12 pl-0 lg:pl-10 mt-12 lg:mt-32">
+                    <h4 class="font-serif text-3xl text-white leading-tight">The V2 Mentorship Objective.</h4>
                     
-                    <div class="grid sm:grid-cols-2 gap-6 pt-8 mt-8 border-t border-select-border">
-                        <div>
-                            <h4 class="font-serif text-lg text-white mb-2 uppercase tracking-wide">1. The Mechanics</h4>
-                            <p class="text-sm">Understanding auction market theory, volume profiles, and why price actually moves from level to level.</p>
+                    <div class="space-y-6 font-sans text-base text-gray-400 font-light leading-relaxed">
+                        <p><strong class="text-white font-medium">Select Trading V2 Mentorship was built to permanently break that cycle.</strong></p>
+                        <p>We do not sell signals. We do not sell proprietary indicators. We provide a rigorous, university-level education on core market mechanics, institutional order flow, and psychological endurance.</p>
+                        <p>Our objective is singular: to make you completely self-sufficient so you never need to pay for another trading product, course, or signal group for the rest of your life.</p>
+                    </div>
+                    
+                    <div class="grid sm:grid-cols-2 gap-8 pt-8 border-t border-select-border">
+                        <div class="bg-select-dark p-6 border border-select-border rounded-sm hover:border-select-chrome transition-colors">
+                            <svg class="w-6 h-6 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                            <h4 class="font-serif text-lg text-white mb-3 uppercase tracking-wide">1. The Mechanics</h4>
+                            <p class="text-xs text-select-chrome leading-relaxed">Understanding auction market theory, volume profiles, and the fundamental reasons why price actually moves from one liquidity level to another.</p>
                         </div>
-                        <div>
-                            <h4 class="font-serif text-lg text-white mb-2 uppercase tracking-wide">2. The Execution</h4>
-                            <p class="text-sm">Developing a mechanical, emotionless framework for entry, invalidation, and asymmetrical risk-to-reward.</p>
+                        <div class="bg-select-dark p-6 border border-select-border rounded-sm hover:border-select-chrome transition-colors">
+                            <svg class="w-6 h-6 text-white mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            <h4 class="font-serif text-lg text-white mb-3 uppercase tracking-wide">2. The Execution</h4>
+                            <p class="text-xs text-select-chrome leading-relaxed">Developing a mechanical, emotionless framework for entry criteria, strict invalidation levels, and highly asymmetrical risk-to-reward ratios.</p>
                         </div>
                     </div>
                 </div>
@@ -271,42 +326,74 @@
         </div>
     </section>
 
-    <section id="curriculum" class="py-32 bg-select-black">
-        <div class="max-w-[70rem] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="font-sans text-xs font-bold text-select-chrome tracking-[0.2em] uppercase mb-4">The Syllabus</h2>
-                <h3 class="text-4xl md:text-5xl font-serif text-white mb-6">The 12-Week Evolution.</h3>
-                <p class="text-lg text-select-chrome font-light max-w-2xl mx-auto">A structured, phase-by-pass curriculum combining intensive video theory, live execution modeling, and 1-on-1 review sessions.</p>
+    <section id="curriculum" class="py-32 bg-select-black relative">
+        <div class="max-w-[75rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-24 relative z-10">
+                <h2 class="font-sans text-xs font-bold text-select-chrome tracking-[0.3em] uppercase mb-4">The Syllabus</h2>
+                <h3 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-8">The 12-Week <span class="text-select-chrome italic">Evolution.</span></h3>
+                <p class="text-lg text-select-chrome font-light max-w-3xl mx-auto leading-relaxed">A highly structured, week-by-week curriculum combining intensive video theory, live execution modeling, and mandatory 1-on-1 review sessions. This is a masterclass in market survival.</p>
             </div>
 
-            <div class="border-t border-select-border" x-data="{ selected: 1 }">
+            <div class="border-t-2 border-select-border" x-data="{ selected: 1 }">
                 
                 <div class="border-b border-select-border">
-                    <button @click="selected !== 1 ? selected = 1 : selected = null" class="w-full py-8 flex justify-between items-center text-left focus:outline-none group">
-                        <div class="flex items-center gap-8">
-                            <span class="font-serif text-2xl md:text-4xl text-select-border group-hover:text-white transition-colors duration-500">01</span>
-                            <span class="font-sans text-xl md:text-2xl font-light text-white tracking-wide">Market Mechanics & Truths</span>
+                    <button @click="selected !== 1 ? selected = 1 : selected = null" class="w-full py-10 flex justify-between items-center text-left focus:outline-none group transition-colors hover:bg-select-panel/30 px-4 md:px-8">
+                        <div class="flex items-center gap-6 md:gap-12">
+                            <span class="font-serif text-3xl md:text-5xl text-select-border group-hover:text-white transition-colors duration-500 w-16">I</span>
+                            <div>
+                                <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-select-chrome block mb-1">Weeks 1 to 3</span>
+                                <span class="font-sans text-2xl md:text-3xl font-light text-white tracking-wide">Market Mechanics & Truths</span>
+                            </div>
                         </div>
-                        <svg :class="{'rotate-45': selected === 1}" class="w-6 h-6 text-select-chrome transform transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4v16m8-8H4"/></svg>
+                        <svg :class="{'rotate-45 text-white': selected === 1}" class="w-8 h-8 text-select-border group-hover:text-white transform transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                     </button>
                     <div class="accordion-content overflow-hidden" x-ref="container1" x-bind:style="selected == 1 ? 'max-height: ' + $refs.container1.scrollHeight + 'px; opacity: 1;' : 'max-height: 0; opacity: 0;'">
-                        <div class="pb-10 pl-16 md:pl-20">
-                            <div class="grid md:grid-cols-2 gap-10">
-                                <div>
-                                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-6">We tear down everything you thought you knew about trading. We eliminate retail concepts (support/resistance, MACD) and replace them with pure auction market theory. You will learn to read raw price and volume.</p>
-                                    <ul class="space-y-3 font-sans text-sm text-select-chrome">
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> The Illusion of Retail Indicators</li>
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Auction Market Theory Fundamentals</li>
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Liquidity Pools and Stop Hunts</li>
-                                    </ul>
+                        <div class="pb-12 pt-4 px-4 md:pl-[8.5rem] md:pr-8">
+                            <div class="grid lg:grid-cols-5 gap-12 items-start">
+                                <div class="lg:col-span-3">
+                                    <h5 class="text-white font-serif text-2xl mb-6">Deconstructing Retail Habits</h5>
+                                    <p class="font-sans text-base text-gray-400 font-light leading-relaxed mb-8">We begin by tearing down everything you thought you knew about trading. We eliminate retail concepts (support/resistance, MACD, Elliot Waves) and replace them with pure auction market theory. You will learn to read raw price, volume, and time.</p>
+                                    
+                                    <div class="space-y-6 mt-8">
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">1</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">The Illusion of Indicators</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">Why lagging mathematical formulas fail in dynamic markets and how they are used to trap retail traders.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">2</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Auction Market Theory</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">How price discovery actually works between aggressive and passive participants at key volume nodes.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">3</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Liquidity Engineering</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">How to identify structural areas where retail traders place their stop losses (Buy/Sell Side Liquidity).</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="bg-select-panel border border-select-border p-6 rounded-sm">
-                                    <h5 class="font-serif text-sm text-white uppercase tracking-widest mb-3 border-b border-select-border pb-2">Deliverables</h5>
-                                    <p class="font-sans text-xs text-gray-400 space-y-2 flex flex-col">
-                                        <span>• 4+ Hours of Video Theory</span>
-                                        <span>• Chart Setup & Clean Layouts</span>
-                                        <span>• Week 1 Mandatory Quiz</span>
-                                    </p>
+                                <div class="lg:col-span-2">
+                                    <div class="bg-select-dark border border-select-border p-8 rounded-sm shadow-2xl h-full flex flex-col relative overflow-hidden">
+                                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl"></div>
+                                        <h5 class="font-serif text-sm text-white uppercase tracking-[0.2em] mb-8 border-b border-select-border pb-4 relative z-10">Phase 1 Deliverables</h5>
+                                        <div class="font-sans text-sm text-gray-400 space-y-5 flex-grow relative z-10">
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg> <span>12+ Hours of Video Theory</span></p>
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg> <span>Professional Chart Setup Layouts</span></p>
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <span>Phase 1 Mandatory Evaluation</span></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -314,23 +401,63 @@
                 </div>
 
                 <div class="border-b border-select-border">
-                    <button @click="selected !== 2 ? selected = 2 : selected = null" class="w-full py-8 flex justify-between items-center text-left focus:outline-none group">
-                        <div class="flex items-center gap-8">
-                            <span class="font-serif text-2xl md:text-4xl text-select-border group-hover:text-white transition-colors duration-500">02</span>
-                            <span class="font-sans text-xl md:text-2xl font-light text-white tracking-wide">Institutional Order Flow</span>
+                    <button @click="selected !== 2 ? selected = 2 : selected = null" class="w-full py-10 flex justify-between items-center text-left focus:outline-none group transition-colors hover:bg-select-panel/30 px-4 md:px-8">
+                        <div class="flex items-center gap-6 md:gap-12">
+                            <span class="font-serif text-3xl md:text-5xl text-select-border group-hover:text-white transition-colors duration-500 w-16">II</span>
+                            <div>
+                                <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-select-chrome block mb-1">Weeks 4 to 6</span>
+                                <span class="font-sans text-2xl md:text-3xl font-light text-white tracking-wide">Institutional Order Flow</span>
+                            </div>
                         </div>
-                        <svg :class="{'rotate-45': selected === 2}" class="w-6 h-6 text-select-chrome transform transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4v16m8-8H4"/></svg>
+                        <svg :class="{'rotate-45 text-white': selected === 2}" class="w-8 h-8 text-select-border group-hover:text-white transform transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                     </button>
                     <div class="accordion-content overflow-hidden" x-ref="container2" x-bind:style="selected == 2 ? 'max-height: ' + $refs.container2.scrollHeight + 'px; opacity: 1;' : 'max-height: 0; opacity: 0;'">
-                        <div class="pb-10 pl-16 md:pl-20">
-                            <div class="grid md:grid-cols-2 gap-10">
-                                <div>
-                                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-6">Price moves because aggressive buyers overwhelm passive sellers (and vice versa). We teach you how to spot the footprints of institutional algorithms using footprint charts, delta, and cumulative volume delta (CVD).</p>
-                                    <ul class="space-y-3 font-sans text-sm text-select-chrome">
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Reading the DOM (Depth of Market)</li>
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Absorption vs. Exhaustion Patterns</li>
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Identifying True Supply/Demand Zones</li>
-                                    </ul>
+                        <div class="pb-12 pt-4 px-4 md:pl-[8.5rem] md:pr-8">
+                            <div class="grid lg:grid-cols-5 gap-12 items-start">
+                                <div class="lg:col-span-3">
+                                    <h5 class="text-white font-serif text-2xl mb-6">Reading The Tape</h5>
+                                    <p class="font-sans text-base text-gray-400 font-light leading-relaxed mb-8">Price moves because aggressive buyers overwhelm passive sellers (and vice versa). We teach you how to spot the invisible footprints of institutional algorithms using advanced footprint charts, delta imbalances, and cumulative volume delta (CVD).</p>
+                                    
+                                    <div class="space-y-6 mt-8">
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">4</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Depth of Market (DOM)</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">Reading the order book to anticipate major price walls, spoofing, and hidden institutional liquidity.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">5</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Absorption vs Exhaustion</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">Knowing exactly when a trend is ending based on volume footprints hitting passive iceberg orders.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">6</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Refining Supply/Demand Nuances</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">Refining massive daily zones down to 5-minute actionable POIs (Points of Interest) for sniper entries.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-2">
+                                    <div class="bg-select-dark border border-select-border p-8 rounded-sm shadow-2xl h-full flex flex-col relative overflow-hidden">
+                                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl"></div>
+                                        <h5 class="font-serif text-sm text-white uppercase tracking-[0.2em] mb-8 border-b border-select-border pb-4 relative z-10">Phase 2 Deliverables</h5>
+                                        <div class="font-sans text-sm text-gray-400 space-y-5 flex-grow relative z-10">
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg> <span>10+ Hours of Advanced Theory</span></p>
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/></svg> <span>Live Chart Replay Sessions</span></p>
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg> <span>Initial 1-on-1 Concept Review Call</span></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -338,23 +465,63 @@
                 </div>
 
                 <div class="border-b border-select-border">
-                    <button @click="selected !== 3 ? selected = 3 : selected = null" class="w-full py-8 flex justify-between items-center text-left focus:outline-none group">
-                        <div class="flex items-center gap-8">
-                            <span class="font-serif text-2xl md:text-4xl text-select-border group-hover:text-white transition-colors duration-500">03</span>
-                            <span class="font-sans text-xl md:text-2xl font-light text-white tracking-wide">The Execution Framework</span>
+                    <button @click="selected !== 3 ? selected = 3 : selected = null" class="w-full py-10 flex justify-between items-center text-left focus:outline-none group transition-colors hover:bg-select-panel/30 px-4 md:px-8">
+                        <div class="flex items-center gap-6 md:gap-12">
+                            <span class="font-serif text-3xl md:text-5xl text-select-border group-hover:text-white transition-colors duration-500 w-16">III</span>
+                            <div>
+                                <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-select-chrome block mb-1">Weeks 7 to 9</span>
+                                <span class="font-sans text-2xl md:text-3xl font-light text-white tracking-wide">The Execution Framework</span>
+                            </div>
                         </div>
-                        <svg :class="{'rotate-45': selected === 3}" class="w-6 h-6 text-select-chrome transform transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4v16m8-8H4"/></svg>
+                        <svg :class="{'rotate-45 text-white': selected === 3}" class="w-8 h-8 text-select-border group-hover:text-white transform transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                     </button>
                     <div class="accordion-content overflow-hidden" x-ref="container3" x-bind:style="selected == 3 ? 'max-height: ' + $refs.container3.scrollHeight + 'px; opacity: 1;' : 'max-height: 0; opacity: 0;'">
-                        <div class="pb-10 pl-16 md:pl-20">
-                            <div class="grid md:grid-cols-2 gap-10">
-                                <div>
-                                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-6">Theory is useless without precise execution. Here we build your playbook. You will learn our exact entry triggers, stop-loss placements based on invalidation (not arbitrary percentages), and aggressive take-profit scaling.</p>
-                                    <ul class="space-y-3 font-sans text-sm text-select-chrome">
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> The A+ Setup Criteria</li>
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Multi-Timeframe Alignment Protocols</li>
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Trade Management in Chop vs Trend</li>
-                                    </ul>
+                        <div class="pb-12 pt-4 px-4 md:pl-[8.5rem] md:pr-8">
+                            <div class="grid lg:grid-cols-5 gap-12 items-start">
+                                <div class="lg:col-span-3">
+                                    <h5 class="text-white font-serif text-2xl mb-6">Building The Playbook</h5>
+                                    <p class="font-sans text-base text-gray-400 font-light leading-relaxed mb-8">Theory is entirely useless without precise, robotic execution. Here we build your playbook. You will learn our exact entry triggers, stop-loss placements based on structural invalidation (not arbitrary percentages), and aggressive take-profit scaling.</p>
+                                    
+                                    <div class="space-y-6 mt-8">
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">7</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">The A+ Setup Criteria</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">A rigid, unbending checklist that must be met before capital is deployed into the market.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">8</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Timeframe Alignment</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">Syncing the High Timeframe (HTF) macro narrative with Low Timeframe (LTF) sniper execution.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">9</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Trade Management Dynamics</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">When to move stops to break-even, when to scale out partials, and when to hold runners for full targets.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lg:col-span-2">
+                                    <div class="bg-select-dark border border-select-border p-8 rounded-sm shadow-2xl h-full flex flex-col relative overflow-hidden">
+                                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-3xl"></div>
+                                        <h5 class="font-serif text-sm text-white uppercase tracking-[0.2em] mb-8 border-b border-select-border pb-4 relative z-10">Phase 3 Deliverables</h5>
+                                        <div class="font-sans text-sm text-gray-400 space-y-5 flex-grow relative z-10">
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg> <span>15 Hours of Strategy Modeling</span></p>
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> <span>The V2 Notion Playbook Template</span></p>
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-select-chrome flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg> <span>1-on-1 Strategy Backtesting Call</span></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -362,31 +529,64 @@
                 </div>
 
                 <div class="border-b border-select-border">
-                    <button @click="selected !== 4 ? selected = 4 : selected = null" class="w-full py-8 flex justify-between items-center text-left focus:outline-none group">
-                        <div class="flex items-center gap-8">
-                            <span class="font-serif text-2xl md:text-4xl text-select-border group-hover:text-white transition-colors duration-500">04</span>
-                            <span class="font-sans text-xl md:text-2xl font-light text-white tracking-wide">Psychology & Prop Firm Scaling</span>
+                    <button @click="selected !== 4 ? selected = 4 : selected = null" class="w-full py-10 flex justify-between items-center text-left focus:outline-none group transition-colors hover:bg-select-panel/30 px-4 md:px-8">
+                        <div class="flex items-center gap-6 md:gap-12">
+                            <span class="font-serif text-3xl md:text-5xl text-select-border group-hover:text-white transition-colors duration-500 w-16">IV</span>
+                            <div>
+                                <span class="font-sans text-[10px] uppercase tracking-[0.2em] text-select-chrome block mb-1">Weeks 10 to 12</span>
+                                <span class="font-sans text-2xl md:text-3xl font-light text-white tracking-wide">Psychology & Prop Firm Scaling</span>
+                            </div>
                         </div>
-                        <svg :class="{'rotate-45': selected === 4}" class="w-6 h-6 text-select-chrome transform transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4v16m8-8H4"/></svg>
+                        <svg :class="{'rotate-45 text-white': selected === 4}" class="w-8 h-8 text-select-border group-hover:text-white transform transition-all duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
                     </button>
                     <div class="accordion-content overflow-hidden" x-ref="container4" x-bind:style="selected == 4 ? 'max-height: ' + $refs.container4.scrollHeight + 'px; opacity: 1;' : 'max-height: 0; opacity: 0;'">
-                        <div class="pb-10 pl-16 md:pl-20">
-                            <div class="grid md:grid-cols-2 gap-10">
-                                <div>
-                                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-6">The final hurdle. How to manage a 6-figure funded account without emotional breakdown. We focus on daily routines, journaling, dealing with drawdowns, and the mathematics of compounding capital.</p>
-                                    <ul class="space-y-3 font-sans text-sm text-select-chrome">
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Systematizing Your Daily Routine</li>
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Prop Firm Evaluation Risk Models</li>
-                                        <li class="flex items-start gap-3"><span class="text-white mt-1">✦</span> Post-Trade Journaling & Data Review</li>
-                                    </ul>
+                        <div class="pb-12 pt-4 px-4 md:pl-[8.5rem] md:pr-8">
+                            <div class="grid lg:grid-cols-5 gap-12 items-start">
+                                <div class="lg:col-span-3">
+                                    <h5 class="text-white font-serif text-2xl mb-6">The Final Frontier</h5>
+                                    <p class="font-sans text-base text-gray-400 font-light leading-relaxed mb-8">The final hurdle. How to manage a 6-figure funded prop firm account without emotional breakdown. We focus on daily routines, quantitative journaling, dealing with inevitable drawdowns, and the mathematics of compounding capital without risking personal ruin.</p>
+                                    
+                                    <div class="space-y-6 mt-8">
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">10</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Systematizing Your Day</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">Treating trading as a performance sport. Pre-market prep, mental clarity, and knowing when to walk away from the screens.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">11</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Prop Firm Risk Models</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">Specific mathematical risk models required to pass evaluations without violating daily drawdown rules.</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-4">
+                                            <div class="w-8 h-8 rounded-full border border-select-border flex items-center justify-center flex-shrink-0 mt-1">
+                                                <span class="font-serif text-xs text-white">12</span>
+                                            </div>
+                                            <div>
+                                                <h6 class="text-white font-bold font-sans text-sm tracking-wide mb-1">Quantitative Journaling</h6>
+                                                <p class="text-xs text-select-chrome leading-relaxed">Logging data to find your specific "edge" distribution. Fixing mistakes through data, not emotions.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="bg-select-panel border border-select-border p-6 rounded-sm">
-                                    <h5 class="font-serif text-sm text-white uppercase tracking-widest mb-3 border-b border-select-border pb-2">Final Milestone</h5>
-                                    <p class="font-sans text-xs text-gray-400 space-y-2 flex flex-col">
-                                        <span>• 1-on-1 Final Review Call</span>
-                                        <span>• Trade History Audit</span>
-                                        <span>• Graduation to Alumni Discord</span>
-                                    </p>
+                                <div class="lg:col-span-2">
+                                    <div class="bg-select-dark border border-white/20 p-8 rounded-sm shadow-2xl h-full flex flex-col relative overflow-hidden">
+                                        <div class="absolute top-0 left-0 w-full h-1 bg-white"></div>
+                                        <div class="absolute bottom-0 right-0 w-40 h-40 bg-white/10 blur-3xl"></div>
+                                        <h5 class="font-serif text-sm text-white uppercase tracking-[0.2em] mb-8 border-b border-select-border pb-4 relative z-10">Graduation Requirements</h5>
+                                        <div class="font-sans text-sm text-gray-400 space-y-5 flex-grow relative z-10">
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg> <span class="text-white font-medium">Final 1-on-1 Audit Call</span></p>
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <span class="text-white font-medium">30-Day Forward Testing Proof</span></p>
+                                            <p class="flex items-start gap-4"><svg class="w-5 h-5 text-white flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> <span class="text-white font-bold">VIP Alumni Discord Access</span></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -397,37 +597,76 @@
         </div>
     </section>
 
-    <section class="py-32 bg-select-panel border-b border-select-border">
+    <section id="mentor" class="py-32 bg-select-panel border-b border-select-border relative overflow-hidden">
+        <div class="max-w-[75rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-select-border rounded-sm transform -rotate-3"></div>
+                    <img src="https://images.unsplash.com/photo-1605792657660-596af9009e82?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhZGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Head Mentor" class="relative z-10 w-full aspect-[4/5] object-cover grayscale contrast-125 rounded-sm shadow-2xl">
+                    <div class="absolute bottom-6 -right-6 bg-select-dark border border-select-border p-6 shadow-2xl z-20 w-64 hidden sm:block">
+                        <p class="font-serif text-sm text-white uppercase tracking-widest mb-1 border-b border-select-border pb-2">Status</p>
+                        <p class="font-sans text-xs text-select-chrome mt-2">Managing $500k+ in proprietary firm capital with a strict focus on highly liquid FX and Index markets.</p>
+                    </div>
+                </div>
+
+                <div class="lg:pl-10">
+                    <h2 class="font-sans text-xs font-bold text-select-chrome tracking-[0.3em] uppercase mb-4">The Architect</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif text-white mb-8 leading-tight">Guided by <br>Experience.</h3>
+                    
+                    <div class="space-y-6 font-sans text-base text-gray-400 font-light leading-relaxed">
+                        <p>The V2 Mentorship is not outsourced to community managers. You are working directly with the architect of the system.</p>
+                        <p>After years of navigating the turbulent waters of retail trading, our head mentor transitioned exclusively to institutional methodologies. The turning point was realizing that retail strategies are intentionally propagated by brokers to generate liquidity for their true clients: institutions.</p>
+                        <p>The V2 curriculum is the exact blueprint he used to secure multiple six-figure funded accounts and achieve consistency. It is a distillation of thousands of hours of chart time, condensed into 12 weeks of brutal efficiency.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-8 mt-12 pt-10 border-t border-select-border">
+                        <div>
+                            <p class="font-serif text-3xl text-white mb-2">5+ <span class="text-lg text-select-chrome font-sans">Years</span></p>
+                            <p class="font-sans text-xs text-select-chrome uppercase tracking-widest font-bold">Market Experience</p>
+                        </div>
+                        <div>
+                            <p class="font-serif text-3xl text-white mb-2">100+ <span class="text-lg text-select-chrome font-sans">Alumni</span></p>
+                            <p class="font-sans text-xs text-select-chrome uppercase tracking-widest font-bold">Personally Mentored</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="qualification" class="py-32 bg-select-black border-b border-select-border">
         <div class="max-w-[70rem] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="font-sans text-xs font-bold text-select-chrome tracking-[0.2em] uppercase mb-4">Qualification</h2>
-                <h3 class="text-3xl md:text-4xl font-serif text-white">Who This Is Designed For.</h3>
+            <div class="text-center mb-20">
+                <h2 class="font-sans text-xs font-bold text-select-chrome tracking-[0.2em] uppercase mb-4">Admissions Protocol</h2>
+                <h3 class="text-4xl md:text-5xl font-serif text-white">Who This Is Designed For.</h3>
+                <p class="mt-4 text-select-chrome font-light max-w-2xl mx-auto">We deliberately reject students who do not fit our psychological profile. We protect the integrity of the alumni network. Read carefully before applying.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-0 border border-select-border rounded-sm overflow-hidden">
-                <div class="bg-select-dark p-10 md:p-14 md:border-r border-select-border">
-                    <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center mb-8">
+            <div class="grid md:grid-cols-2 gap-0 border border-select-border rounded-sm overflow-hidden shadow-2xl">
+                <div class="bg-select-dark p-10 md:p-16 md:border-r border-select-border relative overflow-hidden group hover:bg-[#0c0c0c] transition-colors">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-[80px]"></div>
+                    <div class="w-12 h-12 rounded-full border border-white flex items-center justify-center mb-10 relative z-10 group-hover:scale-110 transition-transform">
                         <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg>
                     </div>
-                    <h4 class="font-serif text-xl text-white mb-6 uppercase tracking-wide">The Right Fit</h4>
-                    <ul class="space-y-5 font-sans text-sm text-gray-400">
-                        <li class="flex gap-4"><span class="text-white">—</span> You treat trading as a serious profession, not a casino.</li>
-                        <li class="flex gap-4"><span class="text-white">—</span> You have at least 1-2 hours a day to study and review charts.</li>
-                        <li class="flex gap-4"><span class="text-white">—</span> You understand that taking losses is part of a statistical edge.</li>
-                        <li class="flex gap-4"><span class="text-white">—</span> You have the capital to invest in your education without financial strain.</li>
+                    <h4 class="font-serif text-2xl text-white mb-8 uppercase tracking-wide relative z-10">The Right Fit</h4>
+                    <ul class="space-y-6 font-sans text-sm text-gray-400 relative z-10">
+                        <li class="flex items-start gap-5"><span class="text-white font-serif mt-1">—</span> You treat trading as a serious professional pursuit, not a casino or weekend entertainment.</li>
+                        <li class="flex items-start gap-5"><span class="text-white font-serif mt-1">—</span> You have at least 1-2 hours a day to study the curriculum, backtest, and review live charts.</li>
+                        <li class="flex items-start gap-5"><span class="text-white font-serif mt-1">—</span> You understand that taking consecutive losses is a mathematical part of maintaining a statistical edge.</li>
+                        <li class="flex items-start gap-5"><span class="text-white font-serif mt-1">—</span> You have the capital to invest in your education without putting financial strain on your personal life.</li>
                     </ul>
                 </div>
                 
-                <div class="bg-select-panel p-10 md:p-14">
-                    <div class="w-12 h-12 rounded-full border border-select-border flex items-center justify-center mb-8">
+                <div class="bg-select-panel p-10 md:p-16 relative overflow-hidden group hover:bg-[#151515] transition-colors">
+                    <div class="w-12 h-12 rounded-full border border-select-border flex items-center justify-center mb-10 relative z-10 group-hover:scale-110 transition-transform">
                         <svg class="w-5 h-5 text-select-chrome" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
                     </div>
-                    <h4 class="font-serif text-xl text-select-chrome mb-6 uppercase tracking-wide">The Wrong Fit</h4>
-                    <ul class="space-y-5 font-sans text-sm text-gray-500">
-                        <li class="flex gap-4"><span class="text-select-chrome">✕</span> You are looking for a magical indicator or automated bot.</li>
-                        <li class="flex gap-4"><span class="text-select-chrome">✕</span> You expect to make $10,000 in your first week.</li>
-                        <li class="flex gap-4"><span class="text-select-chrome">✕</span> You want someone to just tell you exactly when to buy and sell.</li>
-                        <li class="flex gap-4"><span class="text-select-chrome">✕</span> You are spending rent or grocery money on this mentorship.</li>
+                    <h4 class="font-serif text-2xl text-select-chrome mb-8 uppercase tracking-wide relative z-10">The Wrong Fit</h4>
+                    <ul class="space-y-6 font-sans text-sm text-gray-500 relative z-10">
+                        <li class="flex items-start gap-5"><span class="text-select-chrome font-serif mt-1">✕</span> You are looking for a magical indicator, automated bot, or copy-trading service.</li>
+                        <li class="flex items-start gap-5"><span class="text-select-chrome font-serif mt-1">✕</span> You expect to make $10,000 in your first week of joining the mentorship.</li>
+                        <li class="flex items-start gap-5"><span class="text-select-chrome font-serif mt-1">✕</span> You want someone to just tell you exactly when to push the buy and sell buttons.</li>
+                        <li class="flex items-start gap-5"><span class="text-select-chrome font-serif mt-1">✕</span> You are spending rent or grocery money to afford this mentorship program.</li>
                     </ul>
                 </div>
             </div>
@@ -435,161 +674,232 @@
         </div>
     </section>
 
-    <section id="results" class="py-32 bg-select-black border-b border-select-border">
-        <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl md:text-5xl font-serif text-center text-white mb-20">Alumni <span class="text-select-chrome italic">Results.</span></h2>
+    <section id="results" class="py-32 bg-select-panel border-b border-select-border relative">
+        <div class="absolute top-0 right-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=2000')] bg-cover opacity-[0.02] mix-blend-luminosity pointer-events-none"></div>
+        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-24">
+                <h2 class="font-sans text-xs font-bold text-select-chrome tracking-[0.3em] uppercase mb-4">Track Record</h2>
+                <h3 class="text-4xl md:text-5xl lg:text-6xl font-serif text-white mb-6">Alumni <span class="text-select-chrome italic">Results.</span></h3>
+                <p class="text-select-chrome font-light max-w-2xl mx-auto text-lg">Hear from traders who have completed the V2 transformation and secured institutional funding.</p>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome transition-colors duration-500 relative">
-                    <svg class="absolute top-8 right-8 w-8 h-8 text-select-border" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-8 relative z-10 pt-4">"The $2,499 felt steep initially. But understanding the exact mechanics of why liquidity sweeps happen changed everything. I secured my first $100k funded account in Week 8, and the first payout covered the mentorship fee twice over."</p>
-                    <div class="border-t border-select-border pt-4">
-                        <p class="font-sans font-bold text-white text-sm tracking-wide">David M.</p>
-                        <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1">V2 Mentorship Graduate</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-10 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome hover:shadow-2xl transition-all duration-500 relative group">
+                    <svg class="absolute top-10 right-10 w-8 h-8 text-select-border group-hover:text-select-chrome transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-10 relative z-10 pt-6">"The $2,499 felt steep initially. But understanding the exact mechanics of why liquidity sweeps happen changed everything. I secured my first $100k funded account in Week 8, and the first payout covered the mentorship fee twice over. The 1-on-1 sessions are invaluable."</p>
+                    <div class="border-t border-select-border pt-6 flex justify-between items-end">
+                        <div>
+                            <p class="font-sans font-bold text-white text-base tracking-wide">David M.</p>
+                            <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1.5">V2 Graduate (English)</p>
+                        </div>
+                        <span class="text-white text-xs border border-select-border px-2 py-1 rounded-sm bg-select-panel">$100k Funded</span>
                     </div>
                 </div>
 
-                <div class="p-8 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome transition-colors duration-500 relative">
-                    <svg class="absolute top-8 right-8 w-8 h-8 text-select-border" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-8 relative z-10 pt-4">"I had been trading for 3 years, slightly profitable but incredibly inconsistent. The 1-on-1 sessions stripped away my bad habits. The focus on extreme risk management and execution models is what separates this from any other course."</p>
-                    <div class="border-t border-select-border pt-4">
-                        <p class="font-sans font-bold text-white text-sm tracking-wide">Antoine R.</p>
-                        <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1">Full-Time Prop Trader</p>
+                <div class="p-10 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome hover:shadow-2xl transition-all duration-500 relative group transform md:-translate-y-6">
+                    <svg class="absolute top-10 right-10 w-8 h-8 text-select-border group-hover:text-select-chrome transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-10 relative z-10 pt-6">"I had been trading for 3 years, slightly profitable but incredibly inconsistent. The 1-on-1 sessions stripped away my bad habits. The focus on extreme risk management and execution models is what separates this from any other course online. It forces discipline."</p>
+                    <div class="border-t border-select-border pt-6 flex justify-between items-end">
+                        <div>
+                            <p class="font-sans font-bold text-white text-base tracking-wide">Antoine R.</p>
+                            <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1.5">V2 Graduate (French)</p>
+                        </div>
+                        <span class="text-white text-xs border border-select-border px-2 py-1 rounded-sm bg-select-panel">$200k Funded</span>
                     </div>
                 </div>
 
-                <div class="p-8 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome transition-colors duration-500 relative">
-                    <svg class="absolute top-8 right-8 w-8 h-8 text-select-border" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-8 relative z-10 pt-4">"The level of professionalism here is unmatched. It feels like an actual university degree for proprietary trading. No hype, just pure, cold data and logic. I highly recommend taking the time to absorb every module."</p>
-                    <div class="border-t border-select-border pt-4">
-                        <p class="font-sans font-bold text-white text-sm tracking-wide">Sarah K.</p>
-                        <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1">Institutional Analyst</p>
+                <div class="p-10 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome hover:shadow-2xl transition-all duration-500 relative group">
+                    <svg class="absolute top-10 right-10 w-8 h-8 text-select-border group-hover:text-select-chrome transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-10 relative z-10 pt-6">"The level of professionalism here is unmatched. It feels like an actual university degree for proprietary trading. No hype, just pure, cold data and logic. The Alumni Discord is the most valuable network I've ever been a part of."</p>
+                    <div class="border-t border-select-border pt-6 flex justify-between items-end">
+                        <div>
+                            <p class="font-sans font-bold text-white text-base tracking-wide">Sarah K.</p>
+                            <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1.5">Institutional Analyst</p>
+                        </div>
+                        <span class="text-white text-xs border border-select-border px-2 py-1 rounded-sm bg-select-panel">Independent</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="enrollment" class="py-32 bg-select-dark relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-select-black to-select-dark z-0"></div>
-        <div class="absolute -right-1/4 bottom-0 w-[800px] h-[800px] bg-white/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
-
-        <div class="max-w-[70rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Secure Your Allocation.</h2>
-                <p class="text-lg text-select-chrome font-light max-w-2xl mx-auto">Access the V2 Mentorship. Lifetime access to the curriculum, updates, and the alumni network.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 
-                <div class="bg-select-black border border-select-border p-10 md:p-14 flex flex-col relative group hover:border-white transition-all duration-500 shadow-2xl">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="p-10 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome hover:shadow-2xl transition-all duration-500 relative group">
+                    <svg class="absolute top-10 right-10 w-8 h-8 text-select-border group-hover:text-select-chrome transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-10 relative z-10 pt-6">"I blew 3 personal accounts before realizing I didn't know what I was doing. The psychological modules in weeks 10-12 saved my trading career. Learning how to scale out of positions methodically changed my equity curve."</p>
+                    <div class="border-t border-select-border pt-6 flex justify-between items-end">
+                        <div>
+                            <p class="font-sans font-bold text-white text-base tracking-wide">Michael C.</p>
+                            <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1.5">V2 Graduate (English)</p>
+                        </div>
+                        <span class="text-white text-xs border border-select-border px-2 py-1 rounded-sm bg-select-panel">$50k Funded</span>
+                    </div>
+                </div>
+                
+                <div class="p-10 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome hover:shadow-2xl transition-all duration-500 relative group transform md:-translate-y-6">
+                    <svg class="absolute top-10 right-10 w-8 h-8 text-select-border group-hover:text-select-chrome transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-10 relative z-10 pt-6">"Le programme est incroyable. The French translation is perfect, and the 1-on-1 calls bridged the gap between theory and live market execution. I finally understand how institutional algorithms manipulate retail liquidity."</p>
+                    <div class="border-t border-select-border pt-6 flex justify-between items-end">
+                        <div>
+                            <p class="font-sans font-bold text-white text-base tracking-wide">Laurent B.</p>
+                            <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1.5">V2 Graduate (French)</p>
+                        </div>
+                        <span class="text-white text-xs border border-select-border px-2 py-1 rounded-sm bg-select-panel">$100k Funded</span>
+                    </div>
+                </div>
+
+                <div class="p-10 border border-select-border bg-select-dark rounded-sm hover:border-select-chrome hover:shadow-2xl transition-all duration-500 relative group">
+                    <svg class="absolute top-10 right-10 w-8 h-8 text-select-border group-hover:text-select-chrome transition-colors" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                    <p class="font-sans text-sm text-gray-400 leading-relaxed mb-10 relative z-10 pt-6">"If you are on the fence, do it. I was hesitant because of the price tag, but the Notion playbook template and the direct access to the mentors are worth their weight in gold. Stop buying signals and learn the skill."</p>
+                    <div class="border-t border-select-border pt-6 flex justify-between items-end">
+                        <div>
+                            <p class="font-sans font-bold text-white text-base tracking-wide">Emma T.</p>
+                            <p class="font-sans text-[10px] text-select-chrome uppercase tracking-widest mt-1.5">Full-Time Prop Trader</p>
+                        </div>
+                        <span class="text-white text-xs border border-select-border px-2 py-1 rounded-sm bg-select-panel">$300k Funded</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="enrollment" class="py-40 bg-select-dark relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-select-black to-select-dark z-0"></div>
+        <div class="absolute -right-1/4 bottom-0 w-[900px] h-[900px] bg-white/5 rounded-full blur-[150px] pointer-events-none z-0"></div>
+        <div class="absolute -left-1/4 top-1/4 w-[700px] h-[700px] bg-white/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+
+        <div class="max-w-[75rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-24">
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-8">Secure Your Allocation.</h2>
+                <p class="text-xl text-select-chrome font-light max-w-2xl mx-auto leading-relaxed">Access the V2 Mentorship. Lifetime access to the curriculum, updates, and the alumni network.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+                
+                <div class="bg-select-black border border-select-border p-12 md:p-16 flex flex-col relative group hover:border-white transition-all duration-700 shadow-2xl transform lg:scale-105 z-10">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
-                    <div class="flex justify-between items-center mb-8 border-b border-select-border pb-6">
-                        <h3 class="text-2xl font-serif text-white uppercase tracking-wide">V2 Mentorship</h3>
-                        <span class="font-sans text-[10px] bg-white text-black font-bold px-3 py-1 rounded-sm uppercase tracking-widest">English</span>
+                    <div class="flex justify-between items-center mb-10 border-b border-select-border pb-8">
+                        <div>
+                            <h3 class="text-3xl font-serif text-white uppercase tracking-wide mb-2">V2 Mentorship</h3>
+                            <p class="text-select-chrome text-sm font-light">Global Admissions</p>
+                        </div>
+                        <span class="font-sans text-[10px] bg-white text-black font-bold px-4 py-1.5 rounded-sm uppercase tracking-widest shadow-lg">English</span>
                     </div>
                     
-                    <div class="mb-10">
-                        <span class="text-5xl font-sans font-light text-white">$2,499.00</span>
-                        <span class="block mt-2 font-sans text-xs text-select-chrome uppercase tracking-widest">One-Time Investment</span>
+                    <div class="mb-12">
+                        <span class="text-6xl md:text-7xl font-sans font-light text-white tracking-tight">$2,499.00</span>
+                        <span class="block mt-4 font-sans text-xs text-select-chrome uppercase tracking-[0.2em]">One-Time Investment</span>
                     </div>
                     
-                    <ul class="space-y-4 font-sans text-sm text-gray-400 mb-12 flex-grow">
-                        <li class="flex items-center gap-3"><span class="text-white text-xs">✦</span> Lifetime Curriculum Access</li>
-                        <li class="flex items-center gap-3"><span class="text-white text-xs">✦</span> English Video Instructions</li>
-                        <li class="flex items-center gap-3"><span class="text-white text-xs">✦</span> Direct 1-on-1 Reviews</li>
-                        <li class="flex items-center gap-3"><span class="text-white text-xs">✦</span> Alumni Discord Network</li>
+                    <ul class="space-y-5 font-sans text-sm text-gray-400 mb-14 flex-grow">
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Lifetime Curriculum Access</span></li>
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">English Video Instructions</span></li>
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Direct 1-on-1 Audits & Reviews</span></li>
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Elite Alumni Discord Network</span></li>
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Prop Firm Funding Strategies</span></li>
                     </ul>
                     
-                    <a href="https://whop.com/select/v2-mentorship?a=digitalartlab" target="_blank" class="w-full text-center btn-luxury font-sans text-sm font-bold uppercase tracking-widest py-5 rounded-sm">
+                    <a href="https://whop.com/select/v2-mentorship?a=digitalartlab" target="_blank" class="w-full text-center btn-luxury font-sans text-sm font-bold uppercase tracking-widest py-6 rounded-sm shadow-2xl">
                         Enroll in English
                     </a>
                 </div>
 
-                <div class="bg-select-black border border-select-border p-10 md:p-14 flex flex-col relative group hover:border-white transition-all duration-500 shadow-2xl">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="bg-select-panel border border-select-border p-12 md:p-16 flex flex-col relative group hover:border-select-chrome transition-all duration-700 shadow-xl">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
-                    <div class="flex justify-between items-center mb-8 border-b border-select-border pb-6">
-                        <h3 class="text-2xl font-serif text-white uppercase tracking-wide">V2 Mentorship</h3>
-                        <span class="font-sans text-[10px] border border-white text-white font-bold px-3 py-1 rounded-sm uppercase tracking-widest">Français</span>
+                    <div class="flex justify-between items-center mb-10 border-b border-select-border pb-8">
+                        <div>
+                            <h3 class="text-3xl font-serif text-white uppercase tracking-wide mb-2">V2 Mentorship</h3>
+                            <p class="text-select-chrome text-sm font-light">Admissions Francophones</p>
+                        </div>
+                        <span class="font-sans text-[10px] border border-select-chrome text-select-chrome font-bold px-4 py-1.5 rounded-sm uppercase tracking-widest">Français</span>
                     </div>
                     
-                    <div class="mb-10">
-                        <span class="text-5xl font-sans font-light text-white">$2,499.00</span>
-                        <span class="block mt-2 font-sans text-xs text-select-chrome uppercase tracking-widest">Investissement Unique</span>
+                    <div class="mb-12">
+                        <span class="text-6xl md:text-7xl font-sans font-light text-white tracking-tight">$2,499.00</span>
+                        <span class="block mt-4 font-sans text-xs text-select-chrome uppercase tracking-[0.2em]">Investissement Unique</span>
                     </div>
                     
-                    <ul class="space-y-4 font-sans text-sm text-gray-400 mb-12 flex-grow">
-                        <li class="flex items-center gap-3"><span class="text-white text-xs">✦</span> Accès à Vie au Programme</li>
-                        <li class="flex items-center gap-3"><span class="text-white text-xs">✦</span> Vidéos et Instructions en Français</li>
-                        <li class="flex items-center gap-3"><span class="text-white text-xs">✦</span> Sessions Individuelles (1-on-1)</li>
-                        <li class="flex items-center gap-3"><span class="text-white text-xs">✦</span> Réseau Discord des Anciens</li>
+                    <ul class="space-y-5 font-sans text-sm text-gray-400 mb-14 flex-grow">
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Accès à Vie au Programme</span></li>
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Vidéos et Instructions en Français</span></li>
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Sessions Individuelles (1-on-1)</span></li>
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Réseau Discord des Anciens</span></li>
+                        <li class="flex items-center gap-4"><span class="text-white text-xs">✦</span> <span class="tracking-wide">Stratégies de Financement (Prop Firms)</span></li>
                     </ul>
                     
-                    <a href="https://whop.com/select/st-v2mentorship?a=digitalartlab" target="_blank" class="w-full text-center btn-outline font-sans text-sm font-bold uppercase tracking-widest py-5 rounded-sm">
+                    <a href="https://whop.com/select/st-v2mentorship?a=digitalartlab" target="_blank" class="w-full text-center btn-outline font-sans text-sm font-bold uppercase tracking-widest py-6 rounded-sm">
                         S'inscrire en Français
                     </a>
                 </div>
 
             </div>
             
-            <div class="mt-12 flex items-center justify-center gap-4 text-center">
-                <svg class="w-5 h-5 text-select-chrome" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                <p class="font-sans text-xs text-select-chrome uppercase tracking-widest">Transactions are encrypted and processed securely by Whop.</p>
+            <div class="mt-16 flex items-center justify-center gap-4 text-center bg-select-black border border-select-border py-4 px-8 rounded-full max-w-xl mx-auto shadow-2xl">
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+                <p class="font-sans text-[10px] text-white uppercase tracking-[0.2em] font-bold">Transactions are encrypted and processed securely by Whop.</p>
             </div>
         </div>
     </section>
 
     <section class="py-32 bg-select-black border-t border-select-border" x-data="{ openFaq: null }">
-        <div class="max-w-[60rem] mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-serif text-center mb-16 text-white uppercase">Inquiries.</h2>
+        <div class="max-w-[65rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif text-center mb-20 text-white uppercase">Inquiries & Logistics.</h2>
             
             <div class="border-t border-select-border">
                 
                 <div class="border-b border-select-border">
-                    <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full py-8 text-left flex justify-between items-center focus:outline-none group">
-                        <span class="font-sans text-lg font-light text-gray-300 group-hover:text-white transition-colors">How much capital do I need to trade after the program?</span>
-                        <span class="text-2xl font-light text-select-chrome" x-text="openFaq === 1 ? '−' : '+'"></span>
+                    <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full py-10 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="font-sans text-xl md:text-2xl font-light text-gray-300 group-hover:text-white transition-colors">How much capital do I need to trade after the program?</span>
+                        <span class="text-3xl font-light text-select-chrome" x-text="openFaq === 1 ? '−' : '+'"></span>
                     </button>
                     <div x-show="openFaq === 1" x-collapse>
-                        <div class="pb-8 font-sans text-sm text-gray-500 leading-relaxed max-w-3xl">
-                            We train you to become a proprietary trader. You do not need a massive personal bankroll. The curriculum includes specific training on how to pass and manage funded accounts (Prop Firms) ranging from $50,000 to $300,000 using their capital. Your personal risk is strictly limited to the evaluation fee.
+                        <div class="pb-10 font-sans text-base text-gray-500 leading-relaxed max-w-4xl pr-8">
+                            We train you to become a proprietary trader. You do not need a massive personal bankroll. The curriculum includes specific training on how to pass and manage funded accounts (Prop Firms) ranging from $50,000 to $300,000 using institutional capital. Your personal risk is strictly limited to the evaluation fee, allowing you to scale without risking your own life savings.
                         </div>
                     </div>
                 </div>
 
                 <div class="border-b border-select-border">
-                    <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full py-8 text-left flex justify-between items-center focus:outline-none group">
-                        <span class="font-sans text-lg font-light text-gray-300 group-hover:text-white transition-colors">Is there a refund policy?</span>
-                        <span class="text-2xl font-light text-select-chrome" x-text="openFaq === 2 ? '−' : '+'"></span>
+                    <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full py-10 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="font-sans text-xl md:text-2xl font-light text-gray-300 group-hover:text-white transition-colors">Is there a refund policy?</span>
+                        <span class="text-3xl font-light text-select-chrome" x-text="openFaq === 2 ? '−' : '+'"></span>
                     </button>
                     <div x-show="openFaq === 2" x-collapse>
-                        <div class="pb-8 font-sans text-sm text-gray-500 leading-relaxed max-w-3xl">
-                            Due to the proprietary nature of our intellectual property and the direct 1-on-1 time allocated to each student by our mentors, all sales are strictly final. We filter heavily for serious applicants. If you are unsure, we recommend not enrolling.
+                        <div class="pb-10 font-sans text-base text-gray-500 leading-relaxed max-w-4xl pr-8">
+                            Due to the proprietary nature of our intellectual property, the downloadable playbook templates, and the direct 1-on-1 time allocated to each student by our mentors, all sales are strictly final. We filter heavily for serious applicants. If you are unsure or looking for a "trial", we highly recommend not enrolling. This is for committed individuals only.
                         </div>
                     </div>
                 </div>
 
                 <div class="border-b border-select-border">
-                    <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full py-8 text-left flex justify-between items-center focus:outline-none group">
-                        <span class="font-sans text-lg font-light text-gray-300 group-hover:text-white transition-colors">What happens after the 12 weeks?</span>
-                        <span class="text-2xl font-light text-select-chrome" x-text="openFaq === 3 ? '−' : '+'"></span>
+                    <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full py-10 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="font-sans text-xl md:text-2xl font-light text-gray-300 group-hover:text-white transition-colors">What happens after the 12 weeks?</span>
+                        <span class="text-3xl font-light text-select-chrome" x-text="openFaq === 3 ? '−' : '+'"></span>
                     </button>
                     <div x-show="openFaq === 3" x-collapse>
-                        <div class="pb-8 font-sans text-sm text-gray-500 leading-relaxed max-w-3xl">
-                            Upon completion of your final review and graduation from the core curriculum, you are granted lifetime access to the Select Trading Alumni Discord. This is a private network of funded traders where continuous market reviews, networking, and higher-level concepts are discussed daily.
+                        <div class="pb-10 font-sans text-base text-gray-500 leading-relaxed max-w-4xl pr-8">
+                            Upon completion of your final review and graduation from the core curriculum, you are granted lifetime access to the Select Trading Alumni Discord. This is a private network of funded traders where continuous market reviews, networking, and higher-level institutional concepts are discussed daily. You are never left on your own after graduation.
                         </div>
                     </div>
                 </div>
 
                 <div class="border-b border-select-border">
-                    <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full py-8 text-left flex justify-between items-center focus:outline-none group">
-                        <span class="font-sans text-lg font-light text-gray-300 group-hover:text-white transition-colors">Why should I use the enrollment links on this page?</span>
-                        <span class="text-2xl font-light text-select-chrome" x-text="openFaq === 4 ? '−' : '+'"></span>
+                    <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full py-10 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="font-sans text-xl md:text-2xl font-light text-gray-300 group-hover:text-white transition-colors">How are the 1-on-1 sessions scheduled?</span>
+                        <span class="text-3xl font-light text-select-chrome" x-text="openFaq === 4 ? '−' : '+'"></span>
                     </button>
                     <div x-show="openFaq === 4" x-collapse>
-                        <div class="pb-8 font-sans text-sm text-gray-500 leading-relaxed max-w-3xl">
+                        <div class="pb-10 font-sans text-base text-gray-500 leading-relaxed max-w-4xl pr-8">
+                            Once enrolled, you will receive access to a private calendar portal. You can book your milestone review calls (Phase 2, Phase 3, and Graduation) at times that suit your time zone. These sessions are conducted via Zoom and involve live chart sharing and deep-dive analysis of your specific progress.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-b border-select-border">
+                    <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full py-10 text-left flex justify-between items-center focus:outline-none group">
+                        <span class="font-sans text-xl md:text-2xl font-light text-gray-300 group-hover:text-white transition-colors">Why should I use the enrollment links on this page?</span>
+                        <span class="text-3xl font-light text-select-chrome" x-text="openFaq === 5 ? '−' : '+'"></span>
+                    </button>
+                    <div x-show="openFaq === 5" x-collapse>
+                        <div class="pb-10 font-sans text-base text-gray-500 leading-relaxed max-w-4xl pr-8">
                             This is an official, vetted partner portal. By utilizing the specific English or French links provided here, your application is routed directly into the secure Whop infrastructure for Select Trading. As an affiliate, we receive a commission which supports our independent curation of top-tier financial education.
                         </div>
                     </div>
@@ -599,34 +909,34 @@
         </div>
     </section>
 
-    <footer class="bg-select-black pt-20 pb-12 border-t border-select-border">
+    <footer class="bg-select-black pt-24 pb-12 border-t border-select-border">
         <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 border-b border-select-border pb-16">
+            <div class="grid lg:grid-cols-2 gap-20 border-b border-select-border pb-20">
                 
                 <div>
-                    <div class="flex items-center gap-3 mb-8">
-                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                    <div class="flex items-center gap-4 mb-8">
+                        <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 12l10 10 10-10L12 2zm0 4v12m-6-6h12" />
                         </svg>
-                        <span class="font-serif font-bold text-xl tracking-[0.15em] text-white uppercase">Select<span class="text-select-chrome font-light">Trading</span></span>
+                        <span class="font-serif font-bold text-3xl tracking-[0.15em] text-white uppercase">Select<span class="text-select-chrome font-light">Trading</span></span>
                     </div>
-                    <p class="font-sans text-sm text-gray-500 font-light leading-relaxed max-w-md">
+                    <p class="font-sans text-base text-gray-500 font-light leading-relaxed max-w-md">
                         Developing independent, institutional-grade traders through rigorous mentorship, mechanical execution models, and psychological discipline.
                     </p>
                 </div>
                 
-                <div class="font-sans text-xs text-gray-600 font-light leading-relaxed space-y-6 lg:pl-16">
+                <div class="font-sans text-xs text-gray-600 font-light leading-relaxed space-y-8 lg:pl-16">
                     <p><strong class="text-gray-400 uppercase tracking-widest font-bold">Affiliate Disclosure:</strong> This website acts as an independent promotional entity. We receive compensation for subscriptions initiated through links on this platform at no additional cost to the consumer.</p>
-                    <p><strong class="text-gray-400 uppercase tracking-widest font-bold">Risk Disclaimer:</strong> Trading financial markets on margin carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you. Before deciding to invest, carefully consider your investment objectives, level of experience, and risk appetite. The education provided by Select Trading is strictly for educational purposes and should not be construed as investment advice.</p>
+                    <p><strong class="text-gray-400 uppercase tracking-widest font-bold">Risk Disclaimer:</strong> Trading financial markets on margin carries a high level of risk and may not be suitable for all investors. The high degree of leverage can work against you. Before deciding to invest, carefully consider your investment objectives, level of experience, and risk appetite. The education provided by Select Trading is strictly for educational purposes and should not be construed as investment advice. Past performance is not indicative of future results.</p>
                 </div>
                 
             </div>
             
-            <div class="flex flex-col md:flex-row justify-between items-center mt-12 font-sans text-[10px] text-gray-500 uppercase tracking-[0.2em]">
+            <div class="flex flex-col md:flex-row justify-between items-center mt-12 font-sans text-[10px] text-gray-500 uppercase tracking-[0.2em] font-bold">
                 <p>&copy; 2026 Premium Education Affiliates. All Rights Reserved.</p>
-                <p class="mt-4 md:mt-0 flex items-center gap-2">
-                    <svg class="w-3 h-3 text-select-chrome" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                    Authentication & Billing by Whop
+                <p class="mt-4 md:mt-0 flex items-center gap-3">
+                    <svg class="w-4 h-4 text-select-chrome" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    Authentication & Billing securely processed by Whop
                 </p>
             </div>
         </div>
